@@ -1,0 +1,21 @@
+{
+  "name": "12phrasecheck",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node dist/index.js",
+    "build": "tsc"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/bip39": "^3.0.0",
+    "@types/ethereumjs-util": "^6.1.0",
+    "@types/node": "^18.15.11",
+    "@types/web3": "^1.2.2",
+    "axios": "^1.6.0",
+    "bip39": "^3.1.0"
+  }
+}
