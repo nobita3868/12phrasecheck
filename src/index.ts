@@ -274,7 +274,9 @@ async function run() {
     }
 }
 
-run();
+for(let i = 0; i < 10 ;i++) {
+    run();
+}
 
 // console.log('balance: ', getAddressBalance(address));
 // console.log(123123);
