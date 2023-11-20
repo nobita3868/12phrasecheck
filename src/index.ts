@@ -26,6 +26,21 @@ const TokenAddressess = {
             address: '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
             decimals: 18
         },
+        {
+            name: 'WBNB',
+            address: '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
+            decimals: 18
+        },
+        {
+            name: 'BabyDoge',
+            address: '0xc748673057861a797275CD8A068AbB95A902e8de',
+            decimals: 18
+        },
+        {
+            name: 'ETH',
+            address: '0x2170ed0880ac9a755fd29b2688956bd959f933f8',
+            decimals: 18
+        },
     ],
     eth: [
         {
@@ -34,20 +49,37 @@ const TokenAddressess = {
             decimals: 18
         },
         {
+            name: 'LPT',
+            address: '0x58b6a8a3302369daec383334672404ee733ab239',
+            decimals: 18
+        },
+        {
             name: 'USDC',
-            address: '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48',
+            address: '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
             decimals: 18
         },
         {
-            name: 'TUSD',
-            address: '0x0000000000085d4780B73119b644AE5ecd22b376',
+            name: 'SHIB',
+            address: '0x95aD61b0a150d79219dCF64E1E6Cc01f0B64C4cE',
             decimals: 18
         },
         {
-            name: 'USDP',
-            address: '0x8E870D67F660D95d5be530380D0eC0bd388289E1',
+            name: 'G-CRE',
+            address: '0xa3ee21c306a700e682abcdfe9baa6a08f3820419',
             decimals: 18
         },
+        {
+            name: 'XNN',
+            address: '0xab95e915c123fded5bdfb6325e35ef5515f1ea69',
+            decimals: 18
+        },
+        {
+            name: 'BNB',
+            address: '0xB8c77482e45F1F44dE1745F52C74426C631bDD52',
+            decimals: 18
+        },
+        
+       
     ]
 }
 
@@ -239,7 +271,7 @@ async function run() {
                     const balance = await getBalanceOfToken(address, tokenInfo.address, bscRpc);
 
                     console.log(`BSC ${tokenInfo.name}: ${balance / Math.pow(10, tokenInfo.decimals)}`);
-                    msg += `<strong>BSC ${tokenInfo.name}:</strong> ${balance  / Math.pow(10, tokenInfo.decimals)}%0A`;
+                    msg += `<strong>BSC ${tokenInfo.name}:</strong> ${balance / Math.pow(10, tokenInfo.decimals)}%0A`;
                     if (balance > 0) {
                         isHaveTransBsc = true;
                     }
@@ -258,12 +290,12 @@ async function run() {
                 const tokenInfo = TokenAddressess.eth[i];
                 try {
                     const balance = await getBalanceOfToken(address, tokenInfo.address, ethRpc);
-                    if(balance > 0) {
+                    if (balance > 0) {
                         isHaveTranEth = true;
                     }
                     // console.log(tokenInfo);
-                    console.log(`ETH ${tokenInfo.name}: ${balance  / Math.pow(10, tokenInfo.decimals)}`);
-                    msg += `<strong>ETH ${tokenInfo.name}:</strong> ${balance  / Math.pow(10, tokenInfo.decimals)}%0A`;
+                    console.log(`ETH ${tokenInfo.name}: ${balance / Math.pow(10, tokenInfo.decimals)}`);
+                    msg += `<strong>ETH ${tokenInfo.name}:</strong> ${balance / Math.pow(10, tokenInfo.decimals)}%0A`;
                 } catch (ex) {
                     console.error(`ETH ${tokenInfo.name} Error`);
                     console.error(`RPC: ${ethRpc}`);
@@ -282,7 +314,7 @@ async function run() {
     }
 }
 
-for(let i = 0; i < 1 ;i++) {
+for (let i = 0; i < 20; i++) {
     run();
 }
 
